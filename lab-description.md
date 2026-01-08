@@ -15,8 +15,8 @@
     > [!WARNING]
     > Make sure that the project language is **Java**, not Kotlin!
 
-2. Create a new `Pet` class by navigating to File > New > Java Class
-3. Add two attributes to the `Pet` class:
+2. Create a new `com.example.petshop.Pet` class by navigating to File > New > Java Class
+3. Add two attributes to the `com.example.petshop.Pet` class:
 
     - `String name`
     - `Date birthDate`
@@ -31,7 +31,7 @@
     > - `public` : universal access
     > - `No modifier` : package-level access
 
-4. Create two constructors for the `Pet` class:
+4. Create two constructors for the `com.example.petshop.Pet` class:
 
     1. Only `name` as argument. Use `Date = new Date()` (current date) for the Default date value.
     2. Both `name` and `birthDate` as arguments.
@@ -41,20 +41,20 @@
     > - All Java classes implicitly extend the `Object` class (java.lang.Object), which provides basic methods like toString(), equals(), and hashCode() that can be overridden.
     > - `this` refers to the current instance of the class and is used to distinguish between instance variables and constructor parameters.
 
-5. Make a regular `Pet` in MainActivity by passing in an empty string:
+5. Make a regular `com.example.petshop.Pet` in MainActivity by passing in an empty string:
 
     ```java
-    Pet pet = new Pet("");
+    com.example.petshop.Pet pet = new com.example.petshop.Pet("");
     ```
 
-6. Generate getters and setters for the `Pet` class.
+6. Generate getters and setters for the `com.example.petshop.Pet` class.
 
     - Right-click -> Generate -> Getter and Setter -> Shift + Right-click all attributes -> Ok
 
-7. Create a `Cat` child class that extends the `Pet` class.
+7. Create a `Cat` child class that extends the `com.example.petshop.Pet` class.
 
     - Include a `super()` call in Cat's constructors.
-    - `Cat` inherits `Pet`'s methods and attributes, but requires its own constructors. Try to call `super()` in the child's constructor:
+    - `Cat` inherits `com.example.petshop.Pet`'s methods and attributes, but requires its own constructors. Try to call `super()` in the child's constructor:
 
     ```java
     public Cat(String name) {
@@ -64,23 +64,23 @@
 
     - `super()` calls the parent's constructor (there is a hidden call to Object's constructor).
 
-8. Make the Pet Class Abstract
+8. Make the com.example.petshop.Pet Class Abstract
 
-    - Change the `Pet` class declaration to the following:
+    - Change the `com.example.petshop.Pet` class declaration to the following:
     ```java
-    public abstract class Pet { ... }
+    public abstract class com.example.petshop.Pet { ... }
     ```
 
     > [!NOTE]
     > Abstract classes cannot be instantiated directly - they can only be used as base classes for inheritance. You must create concrete subclasses to create objects.
 
-    - Change the `Pet` to a `Cat` in MainActivity.
+    - Change the `com.example.petshop.Pet` to a `Cat` in MainActivity.
 
     ```java
     Cat cat = new Cat("Lucy");
     ```
 
-    - Add an abstract method for speaking in the `Pet` class. It has no implementation and must be overridden by a child classes to add functionality.
+    - Add an abstract method for speaking in the `com.example.petshop.Pet` class. It has no implementation and must be overridden by a child classes to add functionality.
 
     ```java
     public abstract String speak();
@@ -91,7 +91,7 @@
 
 9. Method Overriding
 
-    - `Cat` must override the abstract `speak()` method from `Pet` class.
+    - `Cat` must override the abstract `speak()` method from `com.example.petshop.Pet` class.
     - The `@Override` annotation ensures correct method overriding at compile-time.
     - Each child class can implement `speak()` differently based on its needs.
 
@@ -103,7 +103,7 @@
     }
     ```
 
-10. Make a `Dog` subclass of `Pet`
+10. Make a `Dog` subclass of `com.example.petshop.Pet`
 
     - call `super()` in both of Dog's constructors.
     - `speak()` method should return `"bark"`.
@@ -112,15 +112,15 @@
 
     ```java
     Dog dog = new Dog("Snoopy");
-    ArrayList<Pet> petList = new ArrayList<Pet>();
+    ArrayList<com.example.petshop.Pet> petList = new ArrayList<com.example.petshop.Pet>();
 
     // Can store both Cat and Dog objects
-    // since they both inherit from Pet
+    // since they both inherit from com.example.petshop.Pet
     petList.add(cat);
     petList.add(dog);
     ```
 
-11. Make a `Scorpion` subclass of `Pet`
+11. Make a `Scorpion` subclass of `com.example.petshop.Pet`
 
     - call `super()` in both of Scorpion's constructors.
     - `speak()` method should return `"hiss"`.
@@ -143,7 +143,7 @@
     }
     ```
    
-    - `Pet` should not implement `Pettable` because `Scorpion` should not be pettable
+    - `com.example.petshop.Pet` should not implement `Pettable` because `Scorpion` should not be pettable
     - Make `Cat` and `Dog` classes implement `Pettable` class.
     - All classes that implement this interface must provide implementations for these methods.
 
